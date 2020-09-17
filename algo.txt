@@ -1,0 +1,22 @@
+Solution 1
+DEBUT
+    str <- "mot"
+    SI str NON VIDE:
+        SI str == inverse(str):
+            RETOURNER "Le mot est un palindrome"
+        SINON
+            RETOURNER "Le mot n'est pas un palindrome"
+FIN
+
+Solution 2
+DEBUT
+    str <- "mot"
+    i <- 0
+    SI str NON VIDE:
+        str_len = taille(str)
+        TANT QUE i < str_len -1:
+            SI str[i] != str[str_len - 1 - i]:
+                RETOURNER "Le mot n'est pas un palindrome"
+        FIN TANT QUE
+        RETOURNER "Le mot est un palindrome"
+FIN

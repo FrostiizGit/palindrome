@@ -37,9 +37,8 @@ char* reverse_string(char *str)
 
 void is_palindrome_loop(char *str)
 {
-    int i = 0;
     int len = strlen(str);
-    for (i; i < len - 1; i++)
+    for (int i = 0; i < len - 1; i++)
     {
         if (str[i] != str[len - 1 - i])
         {
@@ -50,16 +49,17 @@ void is_palindrome_loop(char *str)
     printf("This is a palindrome.\n");
 }
 
-void main()
+int main()
 {
     char str[1000];
     printf("Enter a string: ");
     // scanf will wait until atleast 1 char is entered
-    scanf("%s", &str);
+    scanf("%s", str);
     printf("You entered: %s \n", str);
     char *r_str = reverse_string(str);
     printf("Reversed input: %s \n", r_str);
     is_palindrome(str, r_str);
     free(r_str);
     is_palindrome_loop(str);
+    return 0;
 }
